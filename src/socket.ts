@@ -16,9 +16,10 @@ const io = new Server(httpServer, {
     },
 });
 
-// app.get('/', (req, res) => {
-//     res.send('Socket Server is running!');
-// });
+app.get('/', (req, res) => {
+    console.log("Socket Server is running!");
+    res.send('Socket Server is running!');
+});
 
 
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -46,7 +47,7 @@ mongoose.connect(MONGODB_URI).then(() => {
         });
     });
 
-    const PORT = process.env.SOCKET_PORT || 3001;
+    const PORT = process.env.SOCKET_PORT || 4040;
     httpServer.listen(PORT, () => {
         console.log(`[Server] Express & Socket.IO running on port ${PORT}`);
     });
