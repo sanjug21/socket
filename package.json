@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
+    "prestart": "npm run build",
     "start": "node -r tsconfig-paths/register dist/socket.js",
     "dev": "tsx watch src/socket.ts"
   },
